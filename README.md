@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/hephzaron/EMG_ANN.svg?branch=master](https://travis-ci.org/hephzaron/EMG_ANN)
+[![Build Status](https://travis-ci.com/hephzaron/EMG_ANN.svg?branch=master)](https://travis-ci.com/hephzaron/EMG_ANN)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/maintainability)](https://codeclimate.com/github/hephzaron/EMG_ANN/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/test_coverage)](https://codeclimate.com/github/hephzaron/EMG_ANN/test_coverage)
 [![Coverage Status](https://coveralls.io/repos/github/hephzaron/EMG_ANN/badge.svg)](https://coveralls.io/github/hephzaron/EMG_ANN)
