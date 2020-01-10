@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/hephzaron/more-recipe.svg?branch=master)](https://travis-ci.org/hephzaron/more-recipe)
-[![Code Climate](https://codeclimate.com/github/hephzaron/more-recipe/badges/gpa.svg)](https://codeclimate.com/github/hephzaron/more-recipe)
-[![Test Coverage](https://codeclimate.com/github/hephzaron/more-recipe/badges/coverage.svg)](https://codeclimate.com/github/hephzaron/more-recipe/coverage)
-[![Coverage Status](https://coveralls.io/repos/github/hephzaron/more-recipe/badge.svg?branch=master)](https://coveralls.io/github/hephzaron/more-recipe?branch=master)
-[![Issue Count](https://codeclimate.com/github/hephzaron/more-recipe/badges/issue_count.svg)](https://codeclimate.com/github/hephzaron/more-recipe)
+[![Build Status](https://travis-ci.com/hephzaron/EMG_ANN.svg?branch=master](https://travis-ci.org/hephzaron/EMG_ANN)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/maintainability)](https://codeclimate.com/github/hephzaron/EMG_ANN/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/test_coverage)](https://codeclimate.com/github/hephzaron/EMG_ANN/test_coverage)
+[![Coverage Status](https://coveralls.io/repos/github/hephzaron/EMG_ANN/badge.svg)](https://coveralls.io/github/hephzaron/EMG_ANN)
+[![Issue Count](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/issue_count)](https://codeclimate.com/github/hephzaron/EMG_ANN)
 
 
 ## License

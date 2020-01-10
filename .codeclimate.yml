@@ -24,3 +24,6 @@ plugins:
   eslint:
     enabled: true
 exclude_patterns:
+  - "tests/"
+  - "dspEnv/"
+  - "wavelets/"
