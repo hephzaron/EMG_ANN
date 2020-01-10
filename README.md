@@ -2,7 +2,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/maintainability)](https://codeclimate.com/github/hephzaron/EMG_ANN/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/test_coverage)](https://codeclimate.com/github/hephzaron/EMG_ANN/test_coverage)
 [![Coverage Status](https://coveralls.io/repos/github/hephzaron/EMG_ANN/badge.svg)](https://coveralls.io/github/hephzaron/EMG_ANN)
-[![Issue Count](https://api.codeclimate.com/v1/badges/ec1b6aba0a8644439548/issue_count)](https://codeclimate.com/github/hephzaron/EMG_ANN)
 
 
 ## License
