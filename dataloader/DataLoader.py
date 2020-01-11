@@ -139,12 +139,39 @@ class DataLoader(object):
         timevec_new = np.arange(0,newNpnts) / resample_fs
         df = pd.DataFrame(data, columns=self.heading, index=None)
         
-        for idx, column in enumerate(df.columns):
+        for idx, column in enumerate(df.columns):    
+            # interpolate using griddata
             newsignal[column] = griddata(timevec, df[column], timevec_new, method=self._interpolation)
         newsignal['time'] = timevec_new
         return (np.array(newsignal)[:,0:9], np.array(newsignal)[:,-1])
-        # interpolate using griddata
-        # newsignal = griddata(timevec, sample1_zero_mean, newTime, method=self._interpolation)
+        
+    def __groupby_label__(self, data_in):
+        """Load datasets from folder path
+        Args:
+            data_in(np.array): Time series data for all labels in a chunk
+        Returns:
+            data_out(np.array): Resampled output data
+            label_out(np.array): Resampled output label
+        """
+        
+        N = len(data_in)
+        df = pd.DataFrame(data_in, columns=self.heading, index=None)
+        grouped_data = df.groupby("class")
+        
+        data_out = np.array([])
+        label_out = np.array([])
+        
+        # iterate over grouped data by class: key
+        for key, batch in grouped_data:
+            data, label = self.__resample__(np.array(batch), self._resample_fs)
+            # Fill sampled class with actual labels
+            label.fill(key)
+            data_x1 = np.concatenate((data_out.reshape(-1,9), data), axis=0)
+            label_x1 = np.concatenate((label_out.reshape(-1,1), label.reshape(-1,1)), axis=0)
+            
+            data_out = data_x1
+            label_out = label_x1
+        return (data_out, label_out)
         
     def __count__(self):
         """Monitors data indexing when fetching chunks of data
@@ -175,7 +202,7 @@ class DataLoader(object):
             d_out = (data, label)
             
             if (self._resample_fs):
-                data, label = self.__resample__(batch, self._resample_fs)
+                data, label = self.__groupby_label__(batch)
                 d_out = (data, label)
                 yield d_out
             else:
@@ -189,6 +216,7 @@ class DataLoader(object):
         Returns:
             data_out (np.array) : chunked data
         """
+        self.__get_subsamples__()
         data_out = self.__get_chunk__(self._chunked_data)
         return data_out
 
