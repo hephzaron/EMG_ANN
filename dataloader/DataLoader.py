@@ -13,12 +13,12 @@ from scipy.interpolate import griddata
 
 class DataLoader(object):
     
-    """DataLoader object loads dataset from root folder and give in aoutput in chunks
+    """DataLoader object loads dataset from root folder and give an output in chunks.
     Attributes:
-        data_folder (str): Folder directory
-        training_set (bool): Specifies the category of data to load for training and testing
-        resample_fs (int): Resampling frequency of time series data set
-        interpolation (str): Type of interpolation method to be used by griddata module {‘linear’, ‘nearest’, ‘cubic’},
+        data_folder (str): Folder directory.
+        training_set (bool): Specifies the category of data to load for training and testing.
+        resample_fs (int): Resampling frequency of time series data set.
+        interpolation (str): Type of interpolation method to be used by griddata module {‘linear’, ‘nearest’, ‘cubic’}.
     """
     def __init__(self, data_folder, training_set=False,resample_fs=None,  interpolation='cubic'):
         self.heading = []
