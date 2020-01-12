@@ -1,15 +1,41 @@
 language: python
+
 python:
   - 3.6
 cache: pip
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+script:
+  - bundle exec rspec
+  # Preferably you will run test-reporter on branch update events. But
+  # if you setup travis to build PR updates only, you don't need to run
+  # the line below
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+  # In the case where travis is setup to build PR updates only,
+  # uncomment the line below
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+notifications:
+  email: false
+  webhooks: ["https://coveralls.io/webhook?repo_token=COVERALLS_REPO_TOKEN"]
+
 before_install:
   - python --version
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
+
 install:
   - pip install -r requirements.txt
+
 script:
   - python tests.py
+  
 after_success:
-  - codecov # submit coverage
+  - codecov 
+  - istanbul-combine -d merged-coverage -p summary -r lcov coverage/coverage-*.json coverage/coverage-*.json
+  - codeclimate-test-reporter < coverage/lcov.info
+  - coveralls < coverage/lcov.info
