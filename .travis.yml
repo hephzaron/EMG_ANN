@@ -1,10 +1,6 @@
 # Disable sudo to speed up the build
 sudo: false
 
-env:
-  global:
-    CC_TEST_REPORTER_ID=TEST_REPORTER_ID
-
 language: python
 
 python:
