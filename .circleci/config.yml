@@ -53,8 +53,13 @@ jobs:
             . venv/bin/activate
             python tests.py test
 
+      - run:
+          name: creating artifacts
+          command: |
+            mkdir /repo/test-reports;
+
       - store_artifacts:
-          path: test-reports
+          path: /repo/test-reports
           destination: test-reports
 
       
