@@ -51,15 +51,13 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python tests.py test
+            python tests.py
 
-      - run:
-          name: creating artifacts
-          command: |
-            mkdir /repo/test-reports;
+      - store_test_results:
+          path: test-reports
 
       - store_artifacts:
-          path: /repo/test-reports
+          path: test-reports
           destination: test-reports
 
       
