@@ -51,6 +51,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
+            mkdir test-reports
             python tests.py
 
       - store_test_results:
